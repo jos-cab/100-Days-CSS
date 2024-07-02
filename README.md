@@ -1,10 +1,10 @@
 # 100-Days-CSS
 
-My 100 Days CSS Challenge solutions.
+My [100 Days CSS](https://100dayscss.com/) Challenge solutions.
 
-[View demo](https://j0s-cab.github.io/100-Days-CSS/)
+[View demo](https://jos-cabrera.github.io/100-Days-CSS/)
 
-Currently doing: **009**
+Currently doing: **001**
 
 ## TODO
 
