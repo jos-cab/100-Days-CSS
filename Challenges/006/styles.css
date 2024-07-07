@@ -1,0 +1,214 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+* {
+  font-family: "Open Sans", sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+#home-btn {
+  position: relative;
+  top: 1em;
+  left: 1em;
+
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  color: #222;
+  background-color: rgb(106, 163, 238);
+
+  padding: 0.5em 1em;
+  border-radius: 4px;
+}
+
+:root {
+  --col1: rgb(255, 255, 255);
+  --col2: rgb(245, 232, 222);
+  --col3: rgb(120, 100, 80);
+
+  --profile-width: 300px;
+  --profile-height: 300px;
+
+  --profile-picture-size: 75px;
+
+  --interact-btn-width: 125px;
+  --interact-btn-height: 30px;
+
+  --circles-width: 1px;
+  --circle1-added-size: 6px;
+  --circle2-added-size: 12px;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: linear-gradient(45deg, rgb(238, 190, 108), rgb(202, 124, 78));
+  color: #333;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.flex {
+  display: flex;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.presentation,
+.stats {
+  align-items: center;
+  justify-items: center;
+}
+
+.presentation {
+  justify-content: space-around;
+  flex-basis: calc(100% * (2 / 3)); /*66%*/
+}
+
+.profile {
+  background-color: var(--col1);
+  width: var(--profile-width);
+  height: var(--profile-height);
+  border-radius: 3px;
+}
+
+.picture {
+  transform: translateY(calc(100%) / 3);
+  height: 50px;
+  width: var(--profile-picture-size);
+}
+
+.profile-picture {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  width: var(--profile-picture-size);
+  height: var(--profile-picture-size);
+  border-radius: 50%;
+}
+
+.incomplete-circle {
+  position: relative;
+  border-radius: 50%;
+  border-width: var(--circles-width);
+  border-style: solid;
+}
+
+.incomplete-circle:nth-child(2) {
+  width: calc(var(--profile-picture-size) + var(--circle1-added-size));
+  height: calc(var(--profile-picture-size) + var(--circle1-added-size));
+  border-color: var(--col3) var(--col3) var(--col3) transparent;
+  top: calc(
+    (var(--profile-picture-size) + (var(--circle1-added-size) / 2)) * -1
+  ); /*just works don't touch*/
+  right: calc(var(--circle1-added-size) / 2);
+  transition: transform 1.5s cubic-bezier(0.7, 0.4, 0.4, 0.6);
+}
+
+.incomplete-circle:nth-child(3) {
+  width: calc(var(--profile-picture-size) + var(--circle2-added-size));
+  height: calc(var(--profile-picture-size) + var(--circle2-added-size));
+  border-color: var(--col3) transparent var(--col3) var(--col3);
+  top: calc(
+    (var(--profile-picture-size) + (var(--circle2-added-size) / 2)) * -2
+  ); /*just works don't touch*/
+  right: calc(var(--circle2-added-size) / 2);
+  transition: transform 1.5s cubic-bezier(0.7, 0.4, 0.4, 0.6);
+}
+
+.profile-picture:hover {
+  cursor: pointer;
+}
+
+.profile-picture:hover ~ .incomplete-circle:nth-child(2) {
+  transform: rotate(360deg);
+}
+
+.profile-picture:hover ~ .incomplete-circle:nth-child(3) {
+  transform: rotate(-360deg);
+}
+
+.info,
+.interact button {
+  color: var(--col3);
+  align-items: center;
+}
+
+.name {
+  font-weight: 600;
+}
+
+.profession {
+  font-size: 0.75em;
+}
+
+.interact {
+  position: relative;
+  transform: translateY(-20%);
+}
+
+.interact button {
+  margin: 3px 0;
+  background-color: var(--col1);
+  border: 1px solid var(--col3);
+  border-radius: 999px;
+  width: var(--interact-btn-width);
+  height: var(--interact-btn-height);
+  font-weight: 600;
+  transition: background-color 0.25s ease-in, color 0.25s ease-in;
+}
+
+.interact button:hover {
+  background-color: var(--col3);
+  color: var(--col1);
+}
+
+.stats {
+  flex-basis: calc(100% * (1 / 3)); /*33%*/
+  justify-content: space-around;
+}
+
+.stats button {
+  border: 0;
+  background-color: var(--col2);
+  color: var(--col3);
+  width: 100%;
+  height: calc(99% / 3);
+  transition: background-color 0.25s ease-in;
+  justify-content: center;
+  align-items: center;
+}
+
+.stats button .number {
+  font-weight: 600;
+  font-size: 1.4em;
+}
+
+.stats button:hover {
+  cursor: pointer;
+  background-color: rgb(225, 207, 194);
+}
