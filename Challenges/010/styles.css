@@ -1,0 +1,233 @@
+/* delete the following line if no text is used
+ edit the line if you wanna use other fonts*/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+#home-btn {
+	position: relative;
+	top: 1em;
+	left: 1em;
+
+	text-decoration: none;
+	font-weight: bold;
+	text-transform: uppercase;
+
+	color: #222;
+	background-color: rgb(106, 163, 238);
+
+	padding: 0.5em 1em;
+	border-radius: 4px;
+}
+
+/* use only the available space inside the 400x400 frame*/
+.frame {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 400px;
+	height: 400px;
+	margin-top: -200px;
+	margin-left: -200px;
+	border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	background: rgb(76, 76, 76);
+	color: #333;
+	font-family: "Open Sans", Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.clock {
+	color: #eee;
+	width: 175px;
+	height: 175px;
+	background-color: #222;
+	border-radius: 50%;
+	border: 7px solid #333;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.points,
+.point-set {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.point {
+	width: 2px;
+	height: 2px;
+	border-radius: 50%;
+	background-color: #eee;
+	position: relative;
+}
+
+.point:nth-child(1) {
+	left: 50%;
+	top: 0%;
+	transform: translate(-200%, calc(50% + 15px));
+}
+
+.point:nth-child(2) {
+	left: 100%;
+	top: 50%;
+	transform: translate(calc(-150% - 15px), -300%);
+}
+
+.point:nth-child(3) {
+	left: 50%;
+	top: 100%;
+	transform: translate(50%, calc(-350% - 15px));
+}
+
+.point:nth-child(4) {
+	left: 0%;
+	top: 50%;
+	transform: translate(calc(50% + 15px), -250%);
+}
+
+.point-set:nth-child(1) {
+	transform: rotate(0deg);
+}
+.point-set:nth-child(2) {
+	transform: rotate(6deg);
+}
+.point-set:nth-child(3) {
+	transform: rotate(12deg);
+}
+.point-set:nth-child(4) {
+	transform: rotate(18deg);
+}
+.point-set:nth-child(5) {
+	transform: rotate(24deg);
+}
+.point-set:nth-child(6) {
+	transform: rotate(30deg);
+}
+.point-set:nth-child(7) {
+	transform: rotate(36deg);
+}
+.point-set:nth-child(8) {
+	transform: rotate(42deg);
+}
+.point-set:nth-child(9) {
+	transform: rotate(48deg);
+}
+.point-set:nth-child(10) {
+	transform: rotate(54deg);
+}
+.point-set:nth-child(11) {
+	transform: rotate(60deg);
+}
+.point-set:nth-child(12) {
+	transform: rotate(66deg);
+}
+.point-set:nth-child(13) {
+	transform: rotate(72deg);
+}
+.point-set:nth-child(14) {
+	transform: rotate(78deg);
+}
+.point-set:nth-child(15) {
+	transform: rotate(84deg);
+}
+
+.ring {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.ring-path {
+	stroke: #f85b5b;
+	stroke-width: 2.5;
+	fill: none;
+	animation: spin 4.5s linear infinite, flip 4.5s linear infinite;
+	transform-origin: center;
+	transform: rotate(-90deg);
+}
+
+.day,
+.time {
+	display: block;
+	text-align: center;
+}
+
+.day,
+.stats {
+	font-size: 0.7em;
+}
+
+.time {
+	font-weight: bold;
+	font-size: 2.25em;
+}
+
+.stats {
+	display: flex;
+	justify-content: space-around;
+}
+
+.fa-heart {
+	transform: scale(0.75);
+	color: #f85b5b;
+	animation: beat 0.45s infinite ease-in-out;
+	animation-direction: alternate;
+}
+
+@keyframes beat {
+	100% {
+		transform: scale(0.9);
+	}
+}
+
+@keyframes spin {
+	0% {
+		stroke-dasharray: 0, 477.5;
+	}
+
+	50% {
+		stroke-dasharray: 477.5, 0;
+	}
+
+	100% {
+		stroke-dasharray: 0, 477.5;
+	}
+}
+
+@keyframes flip {
+	0% {
+		transform: rotate(-90deg) scaleY(1);
+	}
+
+	49.9% {
+		transform: rotate(-90deg) scaleY(1);
+	}
+
+	50% {
+		transform: rotate(-90deg) scaleY(-1);
+	}
+
+	99.9% {
+		transform: rotate(-90deg) scaleY(-1);
+	}
+
+	100% {
+		transform: rotate(-90deg) scaleY(1);
+	}
+}
