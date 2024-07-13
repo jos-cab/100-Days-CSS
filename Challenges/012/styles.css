@@ -1,0 +1,156 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+#home-btn {
+  position: relative;
+  top: 1em;
+  left: 1em;
+
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  color: #222;
+  background-color: rgb(106, 163, 238);
+
+  padding: 0.5em 1em;
+  border-radius: 4px;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: rgb(76, 182, 222);
+  color: #333;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+blockquote,
+figcaption {
+  color: #fff;
+  padding: 1rem 1.5rem;
+}
+
+blockquote {
+  font-size: 1.45em;
+}
+
+figcaption {
+  font-size: 1.2em;
+  font-style: italic;
+}
+
+p {
+  display: inline;
+}
+
+blockquote::before {
+  content: "„";
+  position: absolute;
+  font-size: 3em;
+  top: -20%;
+  left: 4%;
+  opacity: 0.5;
+}
+
+.definition {
+  cursor: pointer;
+  position: relative;
+  display: inline;
+  background-color: rgb(40, 111, 138);
+  padding: 0 0 0 0.25em;
+}
+
+.definition .definition-text {
+  pointer-events: none;
+  width: 325px;
+  background-color: rgb(40, 111, 138);
+  position: absolute;
+  padding: 3em 1em 1em;
+  z-index: 1;
+  bottom: 200%;
+  left: -10%;
+  margin-left: -60px;
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity 0.5s, bottom 0.5s;
+  cursor: text;
+}
+
+.definition .definition-text .word {
+  font-weight: 700;
+}
+
+.definition .definition-text header {
+  background-color: #fff;
+  color: rgb(40, 111, 138);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5em 1em;
+}
+
+.definition .definition-text header i {
+  cursor: pointer;
+}
+
+.definition .definition-text header i:hover {
+  transition: transform 0.2s;
+  transform: scale(1.1);
+}
+
+.definition .definition-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 40%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgb(40, 111, 138) transparent transparent transparent;
+}
+
+.definition .definition-text::before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 1em;
+}
+
+.definition:hover .definition-text,
+.definition .definition-text:hover {
+  opacity: 1;
+  bottom: 130%;
+  pointer-events: all;
+}
+
+.definition-text {
+  font-size: 0.9rem;
+}
