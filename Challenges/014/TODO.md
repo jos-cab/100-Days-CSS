@@ -1,2 +1,0 @@
-- [ ] give random lenghts to clounds and path
-- [ ] add animation for clouds and path
