@@ -14,4 +14,5 @@ Currently doing: **015**
 
 ## TODO
 
+- [ ] Day 015: upload animation
 - [ ] Change fonts on necessary days
