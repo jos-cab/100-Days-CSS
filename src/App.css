@@ -10,9 +10,9 @@
 }
 
 .container {
-	max-width: 1200px;
+	max-width: 900px;
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 	margin: 20px auto;
 	row-gap: 30px;
 	justify-items: center;
@@ -44,22 +44,4 @@
 
 .card a:hover {
 	text-decoration: underline;
-}
-
-@media (min-width: 425px) {
-	.container {
-		grid-template-columns: repeat(3, 1fr);
-	}
-}
-
-@media (min-width: 768px) {
-	.container {
-		grid-template-columns: repeat(5, 1fr);
-	}
-}
-
-@media (min-width: 1024px) {
-	.container {
-		grid-template-columns: repeat(7, 1fr);
-	}
 }
