@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+#home-btn {
+  position: relative;
+  top: 1em;
+  left: 1em;
+
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  color: #222;
+  background-color: rgb(106, 163, 238);
+
+  padding: 0.5em 1em;
+  border-radius: 4px;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: rgb(229, 206, 178);
+  color: #333;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.floor {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(35, 35, 35);
+  width: 100%;
+  height: 45%;
+}
+
+.foot {
+  position: absolute;
+  background: url("https://100dayscss.com/codepen/doc-martens.svg") no-repeat;
+  width: 150px;
+  height: 130px;
+  z-index: 1;
+}
+
+.foot-container {
+  animation: fade-in 1s ease-in;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.foot:nth-child(1) {
+  top: 17.5%;
+  left: 5%;
+  animation: move-left-foot 2.5s both infinite ease-in-out;
+}
+
+.foot:nth-child(2) {
+  top: 17.5%;
+  left: 50%;
+  animation: move-right-foot 2.5s both infinite ease-in-out;
+}
+
+@keyframes move-left-foot {
+  0%,
+  100% {
+    transform: rotate(40deg);
+  }
+
+  50% {
+    left: 50%;
+    transform: rotate(-20deg) translateY(-10%);
+  }
+
+  75% {
+    transform: rotate(0deg) translateY(18%);
+  }
+}
+
+@keyframes move-right-foot {
+  0%,
+  100% {
+    left: 50%;
+    transform: rotate(-20deg) translateY(-10%);
+  }
+
+  25% {
+    transform: rotate(0deg) translateY(18%);
+  }
+
+  50% {
+    transform: rotate(40deg);
+    left: 5%;
+  }
+}

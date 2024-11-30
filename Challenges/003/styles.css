@@ -1,0 +1,205 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#home-btn {
+  position: relative;
+  top: 1em;
+  left: 1em;
+
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  color: #222;
+  background-color: rgb(106, 163, 238);
+
+  padding: 0.5em 1em;
+  border-radius: 4px;
+}
+
+:root {
+  --scene-size: 175px;
+  --sun-size: 24px;
+  --animation-lenght: 5s;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: rgb(39, 44, 52);
+  color: #333;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.scene {
+  overflow: hidden;
+  width: var(--scene-size);
+  height: var(--scene-size);
+  border-radius: 50%;
+  background-color: rgb(125, 223, 252);
+  animation: scene-opacity ease-in-out var(--animation-lenght);
+  animation-iteration-count: infinite;
+}
+
+.sun,
+.pyramid,
+.sand {
+  position: relative;
+}
+
+.sun {
+  background-color: rgb(255, 239, 0);
+  width: var(--sun-size);
+  height: var(--sun-size);
+  border-radius: 50%;
+  top: 40%;
+  left: -21%;
+  transform-origin: calc(var(--scene-size) / 1.4) calc(var(--scene-size) / 2.2);
+  animation: sun-rise var(--animation-lenght) ease-in-out 0s infinite;
+}
+
+.sand,
+.pyramid {
+  position: relative;
+  top: 10%;
+}
+
+.pyramid {
+  width: calc(var(--scene-size) - 30%);
+  height: calc(var(--scene-size) - 70%);
+  left: 30%;
+}
+
+.pyramid-left,
+.pyramid-right {
+  display: inline-block;
+}
+
+.pyramid-left {
+  width: 75%;
+  height: 100%;
+  background-color: #fff;
+  clip-path: polygon(60% 20%, 0 100%, 80% 100%);
+  animation: pyramid-left-color var(--animation-lenght) ease-in-out 0s infinite;
+}
+
+.pyramid-right {
+  position: absolute;
+  right: 31px;
+  width: 75%;
+  height: 100%;
+  background-color: #aaa;
+  clip-path: polygon(60% 20%, 100% 100%, 80% 100%);
+  animation: pyramid-right-color var(--animation-lenght) ease-in-out 0s infinite;
+}
+
+.pyramid-shadow {
+  background-color: rgb(192, 177, 93);
+  width: 150%;
+  height: 200%;
+  position: relative;
+  z-index: 1;
+  right: 45%;
+  top: -5px;
+  animation: shadow-move var(--animation-lenght) ease-in-out 0s infinite;
+}
+
+.sand {
+  width: var(--scene-size);
+  height: var(--scene-size);
+  background-color: rgb(240, 222, 117);
+}
+
+@keyframes sun-rise {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  30% {
+    transform: rotate(40deg);
+  }
+
+  100% {
+    transform: rotate(125deg);
+  }
+}
+
+@keyframes scene-opacity {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 0.9;
+  }
+
+  75% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes pyramid-left-color {
+  0% {
+    background-color: #fff;
+  }
+
+  30% {
+    background-color: #eee;
+  }
+
+  100% {
+    background-color: #aaa;
+  }
+}
+
+@keyframes pyramid-right-color {
+  0% {
+    background-color: #aaa;
+  }
+
+  30% {
+    background-color: #ddd;
+  }
+
+  100% {
+    background-color: #fff;
+  }
+}
+
+@keyframes shadow-move {
+  0% {
+    clip-path: polygon(80% 0, 30% 0, 300% 0);
+  }
+
+  30% {
+    clip-path: polygon(80% 0, 30% 0, 150% 50%);
+  }
+
+  100% {
+    clip-path: polygon(80% 0, 30% 0, -150% 0);
+  }
+}

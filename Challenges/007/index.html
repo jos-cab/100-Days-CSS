@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>007</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a id="home-btn" href="../../index.html">Home</a>
+    <div class="frame">
+      <div class="center">
+        <div id="menu">
+          <button>
+            <i class="fa fa-dashboard"></i>
+            <span>Dashboard</span>
+          </button>
+          <button>
+            <i class="fa fa-user"></i>
+            <span>Profile</span>
+          </button>
+          <button>
+            <i class="fa fa-bell"></i>
+            <span>Notifications</span>
+          </button>
+          <button>
+            <i class="fa fa-comments"></i>
+            <span>Messages</span>
+          </button>
+          <button>
+            <i class="fa fa-gear"></i>
+            <span>Settings</span>
+          </button>
+        </div>
+        <div id="notifications">
+          <header>
+            <div class="toggle-menu" onclick="toggleMenu()">
+              <div class="toggle-menu-line1"></div>
+              <div class="toggle-menu-circle"></div>
+              <div class="toggle-menu-line2"></div>
+            </div>
+            <h5>Notifications</h5>
+            <input
+              type="search"
+              name="search-bar"
+              id="search-bar"
+              class="search-bar"
+              placeholder="Search ..."
+            />
+            <div
+              class="toggle-search fa fa-search search-icon"
+              onclick="toggleSearch()"
+            ></div>
+          </header>
+          <div class="notification-line"></div>
+          <div>
+            <div class="notification">
+              <div class="notification-circle"></div>
+              <div class="notification-time">9:24 AM</div>
+              <span
+                ><strong>John Walker</strong> posted a photo on your wall.</span
+              >
+            </div>
+            <div class="notification">
+              <div class="notification-circle"></div>
+              <div class="notification-time">8:19 AM</div>
+              <span
+                ><strong>Alice Parker</strong> commented your last post.</span
+              >
+            </div>
+            <div class="notification">
+              <div class="notification-circle"></div>
+              <div class="notification-time">Yesterday</div>
+              <span><strong>Luke Wayne</strong> added you as friend.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="toggle.js"></script>
+    <script
+      src="https://kit.fontawesome.com/f421b7ee01.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

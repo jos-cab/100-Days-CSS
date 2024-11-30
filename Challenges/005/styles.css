@@ -1,0 +1,326 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+#home-btn {
+	position: relative;
+	top: 1em;
+	left: 1em;
+
+	text-decoration: none;
+	font-weight: bold;
+	text-transform: uppercase;
+
+	color: #222;
+	background-color: rgb(106, 163, 238);
+
+	padding: 0.5em 1em;
+	border-radius: 4px;
+}
+
+:root {
+	--stats-width: 300px;
+	--stats-height: 250px;
+	--views-col: rgb(250, 115, 115);
+	--purchases-col: rgb(123, 162, 255);
+	--hint-col-width: 12px;
+	--hint-col-height: 3px;
+}
+
+.frame {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 400px;
+	height: 400px;
+	margin-top: -200px;
+	margin-left: -200px;
+	border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	background: rgb(66, 167, 161);
+	color: #333;
+	font-family: "Open Sans", Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.flex-container {
+	display: flex;
+	align-items: center;
+}
+
+.column {
+	flex-direction: column;
+}
+
+.row {
+	flex-direction: row;
+}
+
+.stats {
+	width: var(--stats-width);
+	height: var(--stats-height);
+	background-color: #eee;
+	border-radius: 5px;
+}
+
+.stats header {
+	width: 100%;
+	background-color: rgb(241, 186, 100);
+	color: #eee;
+	justify-content: space-between;
+	padding: 10px;
+	border-radius: 5px 5px 0 0;
+}
+
+.title {
+	text-transform: uppercase;
+}
+
+.revenue-title {
+	text-align: right;
+}
+
+.date {
+	font-size: smaller;
+}
+
+.stats-hints {
+	width: 100%;
+	height: 20%;
+	justify-content: right;
+	color: #666;
+	text-transform: capitalize;
+	font-size: 0.7em;
+}
+
+.stats-hints span {
+	margin: 0 15px;
+}
+
+.stats-hints span::before {
+	content: " ";
+	position: relative;
+	display: block;
+	width: var(--hint-col-width);
+	height: var(--hint-col-height);
+	right: 5px;
+	border-radius: 999px;
+}
+
+.views::before {
+	background-color: var(--views-col);
+}
+
+.purchases::before {
+	background-color: var(--purchases-col);
+}
+
+.graph {
+	position: relative;
+	height: 50%;
+	width: 100%;
+}
+
+.line {
+	position: absolute;
+	width: 90%;
+	height: 1px;
+	background-color: #ddd;
+	transform: translateX(5%);
+}
+
+.line:nth-child(1) {
+	top: 5%;
+}
+
+.line:nth-child(2) {
+	top: 50%;
+}
+
+.line:nth-child(3) {
+	top: 95%;
+}
+
+.chart-views,
+.chart-purchases {
+	position: absolute;
+}
+
+.chart-views {
+	stroke: var(--views-col);
+	fill: var(--views-col);
+}
+
+.chart-purchases {
+	stroke: var(--purchases-col);
+	fill: var(--purchases-col);
+}
+
+.views-data-points,
+.purchases-data-points {
+	position: absolute;
+
+	width: 100%;
+	height: 100%;
+}
+
+.views-data-point,
+.purchases-data-point {
+	position: absolute;
+	transform: translateX(-50%) translateY(-50%);
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	z-index: 1;
+	cursor: pointer;
+}
+
+/*views*/
+.views-data-point {
+	background-color: var(--views-col);
+}
+
+.views-data-point:nth-child(2) {
+	/*starts with 2 bc of the svg in the html structure*/
+	left: 23px;
+	top: 60px;
+}
+.views-data-point:nth-child(3) {
+	left: 66px;
+	top: 15px;
+}
+
+.views-data-point:nth-child(4) {
+	left: 112px;
+	top: 30px;
+}
+
+.views-data-point:nth-child(5) {
+	left: 154px;
+	top: 15px;
+}
+
+.views-data-point:nth-child(6) {
+	left: 196px;
+	top: 55px;
+}
+
+.views-data-point:nth-child(7) {
+	left: 237px;
+	top: 60px;
+}
+
+.views-data-point:nth-child(8) {
+	left: 279px;
+	top: 15px;
+}
+
+/*purchases*/
+
+.purchases-data-point {
+	background-color: var(--purchases-col);
+}
+
+.purchases-data-point:nth-child(2) {
+	/*starts with 2 bc of the svg in the html structure*/
+	left: 23px;
+	top: 75px;
+}
+
+.purchases-data-point:nth-child(3) {
+	left: 66px;
+	top: 65px;
+}
+
+.purchases-data-point:nth-child(4) {
+	left: 112px;
+	top: 80px;
+}
+
+.purchases-data-point:nth-child(5) {
+	left: 154px;
+	top: 70px;
+}
+
+.purchases-data-point:nth-child(6) {
+	left: 196px;
+	top: 80px;
+}
+
+.purchases-data-point:nth-child(7) {
+	left: 237px;
+	top: 90px;
+}
+
+.purchases-data-point:nth-child(8) {
+	left: 279px;
+	top: 85px;
+}
+
+.tooltip {
+	opacity: 0;
+	color: #eee;
+	text-align: center;
+	font-size: 0.8em;
+	font-weight: 600;
+	border-radius: 6px;
+	padding: 5px;
+	position: absolute;
+	transform: translateX(-41%) translateY(-100%);
+	z-index: 2;
+	transition: opacity 0.4s, transform 0.4s;
+	visibility: hidden;
+}
+
+.tooltip::after {
+	content: "";
+	position: absolute;
+	top: 75%;
+	left: 37%;
+	width: 8px;
+	height: 8px;
+	transform: rotate(45deg);
+}
+
+.purchases-data-point:hover .tooltip,
+.views-data-point:hover .tooltip {
+	opacity: 1;
+	visibility: visible;
+	transform: translateX(-41%) translateY(-125%);
+}
+
+.purchases-data-point .tooltip {
+	background-color: var(--purchases-col);
+}
+
+.purchases-data-point .tooltip::after {
+	background-color: var(--purchases-col);
+}
+
+.views-data-point .tooltip {
+	background-color: var(--views-col);
+}
+
+.views-data-point .tooltip::after {
+	background-color: var(--views-col);
+}
+
+.days {
+	color: #777;
+	width: 100%;
+	height: 20%;
+	justify-content: space-around;
+	text-transform: uppercase;
+	font-size: 0.6em;
+}

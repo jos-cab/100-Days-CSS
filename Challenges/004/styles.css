@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#home-btn {
+  position: relative;
+  top: 1em;
+  left: 1em;
+
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  color: #222;
+  background-color: rgb(106, 163, 238);
+
+  padding: 0.5em 1em;
+  border-radius: 4px;
+}
+
+:root {
+  --circles-size: 100px;
+  --animation-duration-time: 3s;
+}
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: rgb(229, 98, 98);
+  color: #333;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.circle {
+  position: absolute;
+  background-color: #eee;
+  border-radius: 50%;
+  box-shadow: 8px 8px 32px rgba(0, 0, 0, 0.4);
+  transform-origin: left top;
+  transform: scale(0) translateX(-50%) translateY(-50%);
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+  animation-duration: var(--animation-duration-time);
+  animation-direction: alternate;
+}
+
+.circle:nth-child(1) {
+  width: var(--circles-size);
+  height: var(--circles-size);
+  animation-name: disapear-1;
+}
+
+.circle:nth-child(2) {
+  width: calc(var(--circles-size) / 1.5);
+  height: calc(var(--circles-size) / 1.5);
+  animation-name: disapear-2;
+}
+
+.circle:nth-child(3) {
+  width: calc(var(--circles-size) / 2.5);
+  height: calc(var(--circles-size) / 2.5);
+  animation-name: disapear-3;
+}
+
+@keyframes disapear-1 {
+  25% {
+    transform: scale(0) translateX(-50%) translateY(-50%);
+  }
+  100% {
+    transform: scale(1) translateX(-50%) translateY(-50%);
+  }
+}
+
+@keyframes disapear-2 {
+  50% {
+    transform: scale(0) translateX(-50%) translateY(-50%);
+  }
+  100% {
+    transform: scale(1) translateX(-50%) translateY(-50%);
+  }
+}
+
+@keyframes disapear-3 {
+  75% {
+    transform: scale(0) translateX(-50%) translateY(-50%);
+  }
+
+  100% {
+    transform: scale(1) translateX(-50%) translateY(-50%);
+  }
+}
