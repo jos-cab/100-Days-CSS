@@ -4,5 +4,5 @@ import react from "@vitejs/plugin-react";
 // https://vite.dev/config/
 export default defineConfig({
 	plugins: [react()],
-	base: "https://jos-cabrera.github.io/100-Days-CSS",
+	base: "https://jos-cab.github.io/100-Days-CSS",
 });
